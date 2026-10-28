@@ -7,7 +7,11 @@ A separate enhanced edition of the dark portfolio, using HTML, CSS, and a small 
 ## Open the website
 
 1. Extract the ZIP file.
+<<<<<<< HEAD
 2. Open the `bryan-portfolio-auto-v5` folder.
+=======
+2. Open the `personal-portfolio-scroll-v3` folder.
+>>>>>>> master
 3. Double-click `index.html` to open it in a browser.
 
 Keep `index.html`, `style.css`, `script.js`, and the `assets` folder together.
@@ -36,7 +40,11 @@ Project screenshots open at their original resolution in a new tab when selected
 
 1. Sign in to GitHub and create a new public repository, for example `personal-portfolio`.
 2. Choose **Add file → Upload files** (or the upload option on a new empty repository).
+<<<<<<< HEAD
 3. Upload the **contents** of the extracted `bryan-portfolio-auto-v5` folder. `index.html` must be at the repository's top level, beside `style.css`, `script.js`, and `assets/`. Do not upload the ZIP or place the whole project inside another folder.
+=======
+3. Upload the **contents** of the extracted `personal-portfolio-scroll-v3` folder. `index.html` must be at the repository's top level, beside `style.css`, `script.js`, and `assets/`. Do not upload the ZIP or place the whole project inside another folder.
+>>>>>>> master
 4. Commit the uploaded files to `main`.
 5. Open the repository's **Settings → Pages**.
 6. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
@@ -53,11 +61,17 @@ After publishing, record a short walkthrough of the website and post it to your 
 
 The downloadable package does not publish to your GitHub or TikTok accounts.
 
+<<<<<<< HEAD
 ## Opening and scroll animations — version 5
 
 Open this edition’s `index.html` in your browser. The hero introduction enters in a staggered sequence, while the portrait frame slides, scales, and turns into place. The photo reveals from top to bottom and sharpens into focus. The opening starts after the portrait is ready, with a bounded wait so content cannot stay hidden. Scroll down for the existing section animations.
 
 There is no animation toggle. Opening and scroll animations are always enabled automatically, including when the device requests reduced motion, as requested for this edition. Reload the page at the top to replay the opening.
+=======
+## Scroll animation edition — version 3
+
+Open this edition’s `index.html` in Chrome, Edge, Firefox, or Safari, then scroll down. A floating **Animations: On** button shows that the new script has loaded. If it reads **Animations: Off**, click it to enable the full effects for this visit. The default follows the device’s reduced-motion preference.
+>>>>>>> master
 
 - Section headings rise into view with a soft blur-to-sharp transition.
 - Text panels slide in from opposing sides.
@@ -69,12 +83,17 @@ There is no animation toggle. Opening and scroll animations are always enabled a
 - Entrances reset well outside the viewport so they replay when you return to a section.
 - Pointer highlights and portrait tilt remain available on mouse devices.
 
+<<<<<<< HEAD
 Keyboard focus also reveals the focused block. JavaScript never adds hidden states unless it initializes successfully. Without JavaScript, the portfolio remains readable and its ordinary links work.
+=======
+The toggle turns movement off immediately and exposes all content. Keyboard focus also reveals the focused block. JavaScript never adds hidden states unless it initializes successfully. Without JavaScript, the portfolio remains readable and its ordinary links work.
+>>>>>>> master
 
 ### If you still see the old version
 
 1. Extract the entire latest ZIP into a new folder.
 2. Open that folder’s `index.html`, not an older copy or the ZIP preview.
+<<<<<<< HEAD
 3. Make sure `script.js` and `style.css` are beside it.
 4. For a hosted site, replace all three files together and refresh with **Ctrl+F5**. Asset version tags also help avoid cached files.
 5. Open `bryan-portfolio-auto-v5/index.html` from this latest download. No animation button should appear anywhere.
@@ -86,3 +105,16 @@ Edit section **20. Opening sequence** in `style.css` for the portrait entrance. 
 Checked local image paths, alt text, section anchors, unique IDs, balanced markup, external-link attributes, and the local script reference. The stylesheet includes layouts for desktop, tablet, and phone widths, along with visible keyboard focus.
 
 Verified in a live Chrome preview: scroll-triggered visibility, card stagger delays, reset on return to the top, automatic opening after portrait readiness, removal of the visible toggle, and no horizontal overflow at the tested desktop width. Other browsers and physical mobile devices were not tested.
+=======
+3. Make sure `script.js` and `style.css` are beside it. The Animation button should be visible.
+4. For a hosted site, replace all three files together and refresh with **Ctrl+F5**. Asset version tags also help avoid cached files.
+5. If the button says Off, click it to turn the scroll effects on.
+
+Edit section **19. Scroll choreography** in `style.css` for distances, perspective, blur, and duration. Edit `register()` calls and `update()` in `script.js` for stagger groups, reveal positions, replay boundaries, and screenshot drift. There are no external animation libraries or build requirements.
+
+## Verification
+
+Checked local image paths, alt text, section anchors, unique IDs, balanced markup, external-link attributes, and the local script reference. The stylesheet includes layouts for desktop, tablet, and phone widths, along with reduced-motion preferences and visible keyboard focus.
+
+Verified in a live Chrome preview: scroll-triggered visibility, card stagger delays, reset on return to the top, the On/Off control, and no horizontal overflow at the tested desktop width. Other browsers and physical mobile devices were not tested.
+>>>>>>> master

@@ -1,15 +1,25 @@
 /* Scroll edition: no external libraries and no permanently hidden content. */
 (() => {
   'use strict';
+<<<<<<< HEAD
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   const root = document.documentElement;
   const cleanupPointerEffects = [];
   const enabled = true; // Animations start automatically, as requested.
+=======
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const root = document.documentElement;
+  const cleanupPointerEffects = [];
+  let enabled = !reducedMotion.matches;
+  let explicitChoice = false;
+>>>>>>> master
   let frame = 0;
   let printing = false;
   const clamp = value => Math.max(0, Math.min(1, value));
   const items = [];
 
+<<<<<<< HEAD
   // Wait for the portrait pixels before starting its entrance. The previous
   // CSS animation could finish while the large photo was still loading.
   const hero = document.querySelector('.hero');
@@ -49,6 +59,8 @@
     hero.addEventListener('focusin', cancelOpening);
   }
 
+=======
+>>>>>>> master
   function register(selector, type, stagger = false) {
     document.querySelectorAll(selector).forEach((element, index) => {
       if (element.hasAttribute('data-reveal')) return;
@@ -70,6 +82,13 @@
   progress.className = 'reading-progress';
   progress.setAttribute('aria-hidden', 'true');
   document.body.append(progress);
+<<<<<<< HEAD
+=======
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'motion-toggle';
+  document.body.append(toggle);
+>>>>>>> master
   const timeline = document.querySelector('.timeline');
   const sections = Array.from(document.querySelectorAll('main > section[id]'));
   const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'));
@@ -119,6 +138,12 @@
   function applyMode() {
     root.classList.toggle('motion-enabled', enabled && !printing);
     root.classList.toggle('motion-disabled', !enabled || printing);
+<<<<<<< HEAD
+=======
+    toggle.textContent = enabled ? 'Animations: On' : 'Animations: Off';
+    toggle.setAttribute('aria-pressed', String(enabled));
+    toggle.title = enabled ? 'Turn off animation effects' : 'Enable full scroll animations';
+>>>>>>> master
     items.forEach(element => {
       element.classList.remove('reveal-visible');
       element.style.removeProperty('--phone-drift');
@@ -127,6 +152,14 @@
     startPointerEffects();
     requestUpdate();
   }
+<<<<<<< HEAD
+=======
+  toggle.addEventListener('click', () => {
+    explicitChoice = true;
+    enabled = !enabled;
+    applyMode();
+  });
+>>>>>>> master
   document.addEventListener('focusin', event => {
     const target = event.target.closest('[data-reveal]');
     if (target) target.classList.add('reveal-visible');
@@ -135,10 +168,20 @@
   window.addEventListener('resize', requestUpdate, { passive: true });
   window.addEventListener('load', requestUpdate);
   window.addEventListener('pageshow', requestUpdate);
+<<<<<<< HEAD
   finePointer.addEventListener('change', startPointerEffects);
   window.addEventListener('blur', stopPointerEffects);
   window.addEventListener('focus', startPointerEffects);
   window.addEventListener('beforeprint', () => { printing = true; cancelOpening(); applyMode(); });
+=======
+  reducedMotion.addEventListener('change', () => {
+    if (!explicitChoice) { enabled = !reducedMotion.matches; applyMode(); }
+  });
+  finePointer.addEventListener('change', startPointerEffects);
+  window.addEventListener('blur', stopPointerEffects);
+  window.addEventListener('focus', startPointerEffects);
+  window.addEventListener('beforeprint', () => { printing = true; applyMode(); });
+>>>>>>> master
   window.addEventListener('afterprint', () => { printing = false; applyMode(); });
 
   function stopPointerEffects() {
@@ -201,5 +244,8 @@
 
 
   applyMode();
+<<<<<<< HEAD
   prepareOpening();
+=======
+>>>>>>> master
 })();
